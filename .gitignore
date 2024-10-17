@@ -1,0 +1,4 @@
+libs
+.vscode
+gmp*
+*.out

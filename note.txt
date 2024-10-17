@@ -1,0 +1,39 @@
+
+Articoli:
+BM16  =	Bellini, Murru - "An efficient and secure RSA-like cryptosystem exploiting Rédei rational functions over conics" (2016)
+ADM22 = Alecci, Dutto, Murru, "Pell hyperbolas in DLP-based cryptosystems" (2022)
+Dut23 = Dutto, "DLP-based cryptosystems with Pell cubics" (2023)
+
+
+ 
+// è tutto elgamal pell presente in conic
+Vengono eseguite istanze su ElGamal con la conica di Pell
+- elgamal_pell.py
+	Algortimi Gen, Enc e Dec di ElGamal con la conica di Pell (ADM22, cap. 5.1, fig. 3).
+
+ 
+
+
+
+
+
+    // partendo da zero:
+    // ho la cartella con il progetto
+    // estraggo lo zip e lo metto in una cartella all'interno del progetto  
+    // apro nel terminale la cartella estratta (gmp-6.3.0) e faccio il ./configure e make
+    // ora apro la cartella nascosta .libs e copio libgmp in un altra cartella che creo all
+    // interno di quella del progetto. Posso ad esempio chiamarla libs
+    // ho poi rinominato la libreria da libgmp10.5 a libgmp
+
+    // ora per compilare devo includere la libreria
+    // gcc proveC.c -L./libs -lgmp -o proveC
+
+    // se non voglio avere la libreria all interno del progetto nella cartella libs creata
+    // da me, posso metterla in /lib (cartella root) dove vengono cercate tutte in automatico
+    // senza il bisogno di -L./libs
+
+    // il make in automatico mi mandava in  /usr/local/lib ma non andava.     con 
+    // ls /usr/local/lib    non mi mostrava la libreria, quelle mie di default sono in /lib
+    // con ls /lib me le trova
+
+
