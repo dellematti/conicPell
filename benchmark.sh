@@ -44,6 +44,9 @@ for ((i=0; i<n; i++))
 do
     VAR=$((./benchmark) 2>&1)
     SUBSTRING=$(echo $VAR| cut -c 4-5)
+    # potrei salvare anche i valori minimi e massimi? (per il grafico)
+    # e oltre al grafico di media e deviazione, potrei fare uno scatter plot
+
     tmp=$(echo "$SUBSTRING $media" | awk '{print $1-$2}')
     tmp=$(echo $tmp $tmp | awk '{printf "%4.3f\n",$1*$2}')
 
