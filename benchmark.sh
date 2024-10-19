@@ -65,7 +65,7 @@ printf "\nnumero iterazioni = "$n"\n\n"
 
 
 
-# le varianze sono state ottenute dividendo per n 
+# le varianze sono state ottenute dividendo per n ,non per n-1
 
 
 # media = 15.08
@@ -93,7 +93,50 @@ printf "\nnumero iterazioni = "$n"\n\n"
 
 
 
+# media = 15.46
+# varianza = 15.86
+# deviazione starndard = 3.98246
+# numero iterazioni = 10000
 
+
+
+
+
+
+# input grande                       # ho messo in carica il pc mentre andava lo script (?)
+
+# media = 13.16
+# varianza = 30.36
+# deviazione starndard = 5.50999
+# numero iterazioni = 100000
+
+
+
+
+# il pc in carica aumenta di così tanto le prestazioni (?)
+
+# media = 7.59
+# varianza = 5.40
+# deviazione starndard = 2.32379
+# numero iterazioni = 10000
+
+
+# media = 7.68
+# varianza = 5.60
+# deviazione starndard = 2.36643
+# numero iterazioni = 10000
+
+
+
+# ora ho tolto il pc dalla carica
+
+# media = 15.60
+# varianza = 12.99
+# deviazione starndard = 3.60416
+# numero iterazioni = 10000
+
+
+# infatti siamo tornati ai valori di prima
 
 
 
