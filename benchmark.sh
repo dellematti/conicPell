@@ -18,10 +18,10 @@ declare -i n=10000
 
 for ((i=0; i<n; i++))    
 do
-    VAR=$((./benchmark) 2>&1)
+    VAR=$((./benchmark.out) 2>&1)
     SUBSTRING=$(echo $VAR| cut -c 4-6)
     time=$((10#$SUBSTRING + time))    
-    echo $i
+    # echo $i
 
 done
 time=$(($time/10))
@@ -51,7 +51,7 @@ do
     tmp=$(echo $tmp $tmp | awk '{printf "%4.3f\n",$1*$2}')
 
     sum=$(echo "$sum $tmp" | tr . , | awk '{print $1+$2}')    # tr perché dovevo scambiare "." e ","
-    echo $i  
+    # echo $i  
 done
 
 varianza=$(echo "$sum $n" | awk '{printf "%.2f \n", $1/$2}')   # divido per n o per n-1 ?
