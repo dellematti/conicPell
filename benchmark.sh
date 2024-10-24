@@ -14,7 +14,8 @@
 #!/bin/bash
 
 declare -i time=0
-declare -i n=10000      
+# declare -i n=10000      
+declare -i n=100 
 
 for ((i=0; i<n; i++))    
 do
