@@ -31,10 +31,6 @@ int main() {
     // far girare il programma con solo un thread in esecuzione  todo
     float startTime = (float)clock()/CLOCKS_PER_SEC;
 
-    /* Do work */
-
-
-
 
     Keys k = gen();
     PublicKey pk = k.pk;
@@ -54,9 +50,6 @@ int main() {
     // if (cmp != 0) {                       // nel benchmark controllo che sia giusto anche (?) ho provato tante volte
     //     break;                            // e non da mai errore
     // }
-
-
-
 
 
 

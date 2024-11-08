@@ -15,14 +15,14 @@
 
 declare -i time=0
 # declare -i n=10000      
-declare -i n=100 
+declare -i n=100
 
 for ((i=0; i<n; i++))    
 do
     VAR=$((./benchmark.out) 2>&1)
     SUBSTRING=$(echo $VAR| cut -c 4-6)
     time=$((10#$SUBSTRING + time))    
-    # echo $i
+    echo $(echo $VAR| cut -c 4-6)
 
 done
 time=$(($time/10))
