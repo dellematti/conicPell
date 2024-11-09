@@ -15,7 +15,7 @@
 #include "enc.c"
 #include "dec.c"
 
-// gcc benchmark.c -L./libs -lgmp -o benchmark -O3
+// gcc benchmark.c -L./libs -lgmp -o benchmark.out -O3
 // ./benchmark
 
 
