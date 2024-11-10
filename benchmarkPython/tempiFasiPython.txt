@@ -1,0 +1,8 @@
+512 bit, tempi fasi (gen, enc, dec):
+
+19.87
+11.2
+4.18
+
+
+

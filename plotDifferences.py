@@ -5,7 +5,7 @@ from matplotlib.ticker import PercentFormatter
 import matplotlib.ticker as ticker
 
 
-with open('time512bitC.txt', 'r') as file:
+with open('benchmarkC/time512bitC.txt', 'r') as file:
     # Read each line in the file
     sum = 0
     arr=[0]
@@ -15,7 +15,7 @@ with open('time512bitC.txt', 'r') as file:
 f = np.array(arr)  
 
 
-with open('benchmark512py.txt', 'r') as file:
+with open('benchmarkPython/benchmark512py.txt', 'r') as file:
     # Read each line in the file
     sum = 0
     arr2=[0]

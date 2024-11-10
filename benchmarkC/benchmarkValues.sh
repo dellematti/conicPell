@@ -20,15 +20,20 @@ declare -i time=0
 declare -i n=10000      
 # declare -i n=1000 
 
-rm time512bitC.txt
-touch -f time512bitC.txt
+# rm time512bitC.txt
+# touch -f time512bitC.txt
+
+rm timeGen512bitC.txt
+touch -f timeGen512bitC.txt
+
+
 
 for ((i=0; i<n; i++))    
 do
-    VAR=$((./benchmark.out) 2>&1)
+    VAR=$((./benchmarkGen.out) 2>&1)
     SUBSTRING=$(echo $VAR| cut -c 4-7)   # con questo diviso 100 dopo
     time=$((10#$SUBSTRING))    
-    echo -e $((time / 100))"."$((time % 100)) >> time512bitC.txt   # il risultato è in millesimi di secondo
+    echo -e $((time / 100))"."$((time % 100)) >> timeGen512bitC.txt   # il risultato è in millesimi di secondo
     echo -e $((time / 100))"."$((time % 100))    # il risultato è in millesimi di secondo
 done
 

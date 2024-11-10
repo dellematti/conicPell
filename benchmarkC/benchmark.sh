@@ -14,12 +14,16 @@
 #!/bin/bash
 
 declare -i time=0
-# declare -i n=10000      
-declare -i n=100
+declare -i n=10000      
+# declare -i n=1000
 
 for ((i=0; i<n; i++))    
 do
-    VAR=$((./benchmark.out) 2>&1)
+    # VAR=$((./benchmark.out) 2>&1)
+    # VAR=$((./benchmarkGen.out) 2>&1)
+    # VAR=$((./benchmarkEnc.out) 2>&1)
+    VAR=$((./benchmarkDec.out) 2>&1)
+
     SUBSTRING=$(echo $VAR| cut -c 4-6)
     time=$((10#$SUBSTRING + time))    
     echo $(echo $VAR| cut -c 4-6)
@@ -43,11 +47,12 @@ media=$(echo "$time $n" | awk '{printf "%.2f \n", $1/$2}') # media=$(($time/n))
 declare -i sum=0
 for ((i=0; i<n; i++))    
 do
-    VAR=$((./benchmark) 2>&1)
-    SUBSTRING=$(echo $VAR| cut -c 4-5)
-    # potrei salvare anche i valori minimi e massimi? (per il grafico)
-    # e oltre al grafico di media e deviazione, potrei fare uno scatter plot
+    # VAR=$((./benchmark.out) 2>&1)
+    # VAR=$((./benchmarkGen.out) 2>&1)
+    # VAR=$((./benchmarkEnc.out) 2>&1)
+    VAR=$((./benchmarkDec.out) 2>&1)
 
+    SUBSTRING=$(echo $VAR| cut -c 4-5)
     tmp=$(echo "$SUBSTRING $media" | awk '{print $1-$2}')
     tmp=$(echo $tmp $tmp | awk '{printf "%4.3f\n",$1*$2}')
 
@@ -69,55 +74,14 @@ printf "\nnumero iterazioni = "$n"\n\n"
 
 
 
+
 # le varianze sono state ottenute dividendo per n ,non per n-1
 
 
-# media = 15.08
-# varianza = 12.17
-# deviazione starndard = 3.48855
-# numero iterazioni = 10000
+###############################################à valori a 512 bit
 
 
-# media = 14.92
-# varianza = 13.71
-# deviazione starndard = 3.7027
-# numero iterazioni = 10000
-
-
-# media = 14.53
-# varianza = 15.77
-# deviazione starndard = 3.97115
-# numero iterazioni = 10000
-
-
-# media = 15.69
-# varianza = 13.20
-# deviazione starndard = 3.63318
-# numero iterazioni = 10000
-
-
-
-# media = 15.46
-# varianza = 15.86
-# deviazione starndard = 3.98246
-# numero iterazioni = 10000
-
-
-
-
-
-
-# input grande                       # ho messo in carica il pc mentre andava lo script (?)
-
-# media = 13.16
-# varianza = 30.36
-# deviazione starndard = 5.50999
-# numero iterazioni = 100000
-
-
-
-
-# il pc in carica aumenta di così tanto le prestazioni (?)
+# con benchmark.out     cioè istanza completa
 
 # media = 7.59
 # varianza = 5.40
@@ -132,16 +96,56 @@ printf "\nnumero iterazioni = "$n"\n\n"
 
 
 
-# ora ho tolto il pc dalla carica
+#######################################
 
-# media = 15.60
-# varianza = 12.99
-# deviazione starndard = 3.60416
+
+# con benchmarkgen    generazione chiavi
+
+# media = 5.39
+# varianza = 8.50
+# deviazione starndard = 2.91548
 # numero iterazioni = 10000
 
 
-# infatti siamo tornati ai valori di prima
+
+# media = 5.35
+# varianza = 8.05
+# deviazione starndard = 2.83725
+# numero iterazioni = 10000
 
 
 
+####################################
 
+
+# con benchmarkEnc     
+
+# media = 2.88
+# varianza = 0.31
+# deviazione starndard = 0.556776
+# numero iterazioni = 10000
+
+
+
+# media = 2.86
+# varianza = 0.30
+# deviazione starndard = 0.547723
+# numero iterazioni = 10000
+
+
+
+####################################
+
+
+# con benchmarkDec
+
+# media = 0.96
+# varianza = 0.75
+# deviazione starndard = 0.866025
+# numero iterazioni = 100
+
+
+# media = 1.07
+# varianza = 0.76
+# deviazione starndard = 0.87178
+# numero iterazioni = 10000

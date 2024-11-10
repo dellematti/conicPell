@@ -27,10 +27,8 @@
 // benchmark sull intera esecuzione di un istanza di ElGamal con la conica di Pell (a 512 bit)    gen_enc_dec
 int main() {
 
-
     // far girare il programma con solo un thread in esecuzione  todo
     float startTime = (float)clock()/CLOCKS_PER_SEC;
-
 
     Keys k = gen();
     PublicKey pk = k.pk;
@@ -44,13 +42,6 @@ int main() {
     mpz_t risultato;
     mpz_init(risultato);
     funzioneDec(risultato, ct, k);
-
-
-    // int cmp = mpz_cmp(msg, risultato);
-    // if (cmp != 0) {                       // nel benchmark controllo che sia giusto anche (?) ho provato tante volte
-    //     break;                            // e non da mai errore
-    // }
-
 
 
     float endTime = (float)clock()/CLOCKS_PER_SEC;

@@ -37,3 +37,7 @@ Vengono eseguite istanze su ElGamal con la conica di Pell
     // con ls /lib me le trova
 
 
+
+
+benchmark.c prova tutta l'istanza dell'algoritmo (a 512 bit)
+
