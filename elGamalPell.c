@@ -15,17 +15,16 @@
 #include "enc.c"
 #include "dec.c"
 
-// gcc elGamalPell.c -L./libs -lgmp -o elGamalPell
-// ./elGamalPell
 
-// gcc elGamalPell.c -L./libs -lgmp -o elGamalPell -O3
+// gcc elGamalPell.c -L./libs -lgmp -o elGamalPell.out -O3
+// ./elGamalPell.out
 
 
 
 // Vengono eseguite istanze su ElGamal con la conica di Pell 
 int main() {
 
-    Keys k = gen();
+    Keys k = gen(7680);
     // printf("%s\n", k.sk.k);     // stampa la chiave segreta
 
     PublicKey pk = k.pk;

@@ -24,7 +24,7 @@
 int main() {
 
 
-    Keys k = gen();
+    Keys k = gen(512);
     PublicKey pk = k.pk;
 
 

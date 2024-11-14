@@ -5,6 +5,7 @@
 
 #include "gmp-6.3.0/gmp.h"
 
+
 #include "modSqrt.c"
 #include "conicPow.c"
 
@@ -30,7 +31,7 @@ int main() {
     // far girare il programma con solo un thread in esecuzione  todo
     float startTime = (float)clock()/CLOCKS_PER_SEC;
 
-    Keys k = gen();
+    Keys k = gen(7680);
     PublicKey pk = k.pk;
 
     mpz_t msg;
