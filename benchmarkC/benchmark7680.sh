@@ -20,10 +20,10 @@ declare -i n=100
 
 for ((i=0; i<n; i++))    
 do
-    time=$((./benchmark.out) 2>&1)
-    # VAR=$((./benchmarkGen.out) 2>&1)
-    # VAR=$((./benchmarkEnc.out) 2>&1)
-    # VAR=$((./benchmarkDec.out) 2>&1)
+    # time=$((./benchmark.out) 2>&1)
+    time=$((./benchmarkGen.out) 2>&1)
+    # time=$((./benchmarkEnc.out) 2>&1)
+    # time=$((./benchmarkDec.out) 2>&1)
 
     secondi=${time%.*} 
     millisecondi=${time#*.}
@@ -31,7 +31,7 @@ do
     
     tmp=$(echo $secondi 1000 | awk '{print $1*$2}')
     tmp=$(echo $tmp $millisecondi | awk '{print $1+$2}')
-    # echo $millisecondi
+    echo $millisecondi
     sum+=$(($tmp))
 
     # echo $tmp            # il tempo è in millisecondi
@@ -59,10 +59,10 @@ echo $media "media"
 declare -i sum=0
 for ((i=0; i<n; i++))    
 do
-    time=$((./benchmark.out) 2>&1)
-    # VAR=$((./benchmarkGen.out) 2>&1)
-    # VAR=$((./benchmarkEnc.out) 2>&1)
-    # VAR=$((./benchmarkDec.out) 2>&1)
+    # time=$((./benchmark.out) 2>&1)
+    time=$((./benchmarkGen.out) 2>&1)
+    # time=$((./benchmarkEnc.out) 2>&1)
+    # time=$((./benchmarkDec.out) 2>&1)
 
     secondi=${time%.*} 
     millisecondi=${time#*.}
@@ -108,6 +108,7 @@ printf "\nnumero iterazioni = "$n"\n\n"
 
 ###############################################à valori a 7680 bit
 
+# istanza completa
 
 # media = 4965 millesimi di secondo
 # varianza = 1179174.97
@@ -122,11 +123,6 @@ printf "\nnumero iterazioni = "$n"\n\n"
 
 
 
-
-
-
-
-
 # media = 4970 millesimi di secondo
 # varianza = 1419012.02
 # deviazione starndard = 1191.22
@@ -136,3 +132,20 @@ printf "\nnumero iterazioni = "$n"\n\n"
 # real	16m46.296s
 # user	16m20.962s
 # sys	0m25.424s
+
+
+
+
+################
+# generazione chiavi
+
+# media = 2568 millesimi di secondo
+# varianza = 1158391.53
+# deviazione starndard = 1076.29
+# numero iterazioni = 100
+
+
+# media = 2890 millesimi di secondo
+# varianza = 1592940.21
+# deviazione starndard = 1262.12
+# numero iterazioni = 100

@@ -28,7 +28,7 @@
 int main() {
 
     float startTime = (float)clock()/CLOCKS_PER_SEC;
-    Keys k = gen(512);
+    Keys k = gen(7680);
     float endTime = (float)clock()/CLOCKS_PER_SEC;
 
     float timeElapsed = endTime - startTime;
