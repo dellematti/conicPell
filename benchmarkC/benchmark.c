@@ -3,21 +3,21 @@
 #include <time.h>
 #include <string.h>
 
-#include "gmp-6.3.0/gmp.h"
+#include "../gmp-6.3.0/gmp.h"
 
 
-#include "modSqrt.c"
-#include "conicPow.c"
+#include "../modSqrt.c"
+#include "../conicPow.c"
 
-#include "keys.h"
-#include "ciphertext.h"
+#include "../keys.h"
+#include "../ciphertext.h"
 
-#include "gen.c"
-#include "enc.c"
-#include "dec.c"
+#include "../gen.c"
+#include "../enc.c"
+#include "../dec.c"
 
-// gcc benchmark.c -L./libs -lgmp -o benchmark.out -O3
-// ./benchmark
+// gcc benchmark.c -L../libs -lgmp -o benchmark.out -O3   (due punti prima di libs)
+// ./benchmark.out      e la lunghezza della chiave
 
 
 // questo file è praticamente uguale a elGamalPell, esegue l istanza di elgamal ma non stampa i risultati
@@ -26,12 +26,19 @@
 
 
 // benchmark sull intera esecuzione di un istanza di ElGamal con la conica di Pell (a 512 bit)    gen_enc_dec
-int main() {
+int main(int argc, char *argv[]) {
 
-    // far girare il programma con solo un thread in esecuzione  todo
+    int keyLen = atoi(argv[1]);
+
+    // da cancellare durante i benchmark
+    printf("\ndimensione chiave :\n");
+    printf("%d\n", keyLen);
+    printf("\n\ntempo impiegato :\n");
+
+
     float startTime = (float)clock()/CLOCKS_PER_SEC;
 
-    Keys k = gen(7680);
+    Keys k = gen(keyLen);
     PublicKey pk = k.pk;
 
     mpz_t msg;
@@ -49,4 +56,21 @@ int main() {
 
     float timeElapsed = endTime - startTime;
     printf("%f\n", timeElapsed);
+
+
+    // da cancellare durante i benchmark:
+    
+    printf("\nMessaggio iniziale :\n");
+    mpz_out_str(stdout,10,msg);
+    printf("\n\n");
+
+    printf("Messaaggio cifrato :\n");
+    printf("%s\n", ct.xC1);     
+    printf("%s\n", ct.yC1);     
+    printf("%s\n", ct.xC2);     
+    printf("%s\n", ct.yC2);  
+
+    printf("\n\nMessaggio decifrato :\n");
+    mpz_out_str(stdout,10,risultato);
+    printf("\n");
 }
