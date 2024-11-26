@@ -24,10 +24,9 @@
 int main() {
 
 
-    Keys k = gen(512);
+    // Keys k = gen(512);
+    Keys k = gen(7680);
     PublicKey pk = k.pk;
-
-
 
 
     mpz_t msg;

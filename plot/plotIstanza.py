@@ -8,7 +8,7 @@ X = ['Media','Deviazione']
 
 # valori a 7680 bit
 c = [4970,1191.22] 
-python = [50816.8,555.9] 
+python = [50816.8,14031.653170243] 
 
 
   

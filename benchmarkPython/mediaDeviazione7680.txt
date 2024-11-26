@@ -1,0 +1,16 @@
+# media e deviazione delle fasi a 7680 bit di lunghezza in python
+
+
+gen
+25254.772
+12705.328
+
+
+enc
+18429.7
+230.16
+
+
+dec
+7438.9
+36.12

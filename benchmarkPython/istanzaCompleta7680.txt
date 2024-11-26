@@ -1,6 +1,7 @@
 Media e deviazione di una istanza completa a 7680 bit di lunghezza (gen enc dec)
 
 # Media aritmetica (μ): 50.8168
-# Deviazione standard (σ): 0.55594582469902
+# Deviazione standard (σ): 14.031653170243
+
 
 valori in secondi

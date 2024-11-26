@@ -15,15 +15,16 @@
 
 declare -i time=0
 # declare -i n=10000      
-declare -i n=1
+declare -i n=10
 
 for ((i=0; i<n; i++))    
 do
-    VAR=$((./benchmark.out) 2>&1)
+    # VAR=$((./benchmark.out) 2>&1)
     # VAR=$((./benchmarkGen.out) 2>&1)
-    # VAR=$((./benchmarkEnc.out) 2>&1)
+    VAR=$((./benchmarkEnc.out) 2>&1)
     # VAR=$((./benchmarkDec.out) 2>&1)
 
+    echo $VAR
     SUBSTRING=$(echo $VAR| cut -c 4-6)
     time=$((10#$SUBSTRING + time))    
     echo $(echo $VAR| cut -c 4-6)
@@ -47,9 +48,9 @@ media=$(echo "$time $n" | awk '{printf "%.2f \n", $1/$2}') # media=$(($time/n))
 declare -i sum=0
 for ((i=0; i<n; i++))    
 do
-    VAR=$((./benchmark.out) 2>&1)
+    # VAR=$((./benchmark.out) 2>&1)
     # VAR=$((./benchmarkGen.out) 2>&1)
-    # VAR=$((./benchmarkEnc.out) 2>&1)
+    VAR=$((./benchmarkEnc.out) 2>&1)
     # VAR=$((./benchmarkDec.out) 2>&1)
 
     SUBSTRING=$(echo $VAR| cut -c 4-5)
@@ -149,3 +150,6 @@ printf "\nnumero iterazioni = "$n"\n\n"
 # varianza = 0.76
 # deviazione starndard = 0.87178
 # numero iterazioni = 10000
+
+
+

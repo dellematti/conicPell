@@ -21,9 +21,9 @@ declare -i n=100
 for ((i=0; i<n; i++))    
 do
     # time=$((./benchmark.out) 2>&1)
-    time=$((./benchmarkGen.out) 2>&1)
+    # time=$((./benchmarkGen.out) 2>&1)
     # time=$((./benchmarkEnc.out) 2>&1)
-    # time=$((./benchmarkDec.out) 2>&1)
+    time=$((./benchmarkDec.out) 2>&1)
 
     secondi=${time%.*} 
     millisecondi=${time#*.}
@@ -60,9 +60,9 @@ declare -i sum=0
 for ((i=0; i<n; i++))    
 do
     # time=$((./benchmark.out) 2>&1)
-    time=$((./benchmarkGen.out) 2>&1)
+    # time=$((./benchmarkGen.out) 2>&1)
     # time=$((./benchmarkEnc.out) 2>&1)
-    # time=$((./benchmarkDec.out) 2>&1)
+    time=$((./benchmarkDec.out) 2>&1)
 
     secondi=${time%.*} 
     millisecondi=${time#*.}
@@ -149,3 +149,59 @@ printf "\nnumero iterazioni = "$n"\n\n"
 # varianza = 1592940.21
 # deviazione starndard = 1262.12
 # numero iterazioni = 100
+
+
+
+###############
+# enc
+
+# media = 1706 millesimi di secondo
+# varianza = 4634.22
+# deviazione starndard = 68.0751
+# numero iterazioni = 100
+
+
+# real	13m22.131s
+# user	13m2.638s
+# sys	0m19.574s
+
+
+# media = 1729 millesimi di secondo
+# varianza = 2911.52
+# deviazione starndard = 53.9585
+# numero iterazioni = 100
+
+
+# real	13m26.186s
+# user	13m6.210s
+# sys	0m20.055s
+
+
+
+#############################################
+
+# dec
+
+# media = 792. millesimi di secondo
+# varianza = 654.08
+# deviazione starndard = 25.575
+# numero iterazioni = 100
+
+
+# real	16m57.460s
+# user	16m31.160s
+# sys	0m26.400s
+
+
+
+
+# media = 785. millesimi di secondo
+# varianza = 300.99
+# deviazione starndard = 17.3491
+# numero iterazioni = 100
+
+
+# real	17m7.158s
+# user	16m39.696s
+# sys	0m27.568s
+
