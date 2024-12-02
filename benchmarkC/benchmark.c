@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 
     mpz_t msg;
     mpz_init(msg);                 // provo valori diversi?  magari la "i" che ho nel for fuori in bash
-    mpz_set_ui(msg, 127);          // in teoria però la lunghezza del messaggio non influisce (?) TESTARLO  (shift O(1))
+    mpz_set_ui(msg, 123456);          // in teoria però la lunghezza del messaggio non influisce (?) TESTARLO  (shift O(1))
                                    
     CipherText ct = enc(msg, pk);
 

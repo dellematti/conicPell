@@ -84,6 +84,12 @@ Keys gen(int n) {
             tmp_q = mpz_probab_prime_p(q,25);    // il numero di volte potrebbe cambiare in base a n (?)
         } while (tmp_q == 0);  // se tmp = 0 allora sicuramente non è primo
     }
+    printf("p :\n");
+    mpz_out_str(stdout,10,p);
+    printf("\n\n");
+    printf("q :\n");
+    mpz_out_str(stdout,10,q);
+    printf("\n\n");
         
     // gmp_randinit_default(state);  
     // seed = clock();                  // serve inizializzarlo più volte?
@@ -176,14 +182,54 @@ Keys gen(int n) {
                     mpz_init(tmpMax); 
                     mpz_init(k);       
 
-                    mpz_sub_ui(tmpMax,q,-1);
+                    mpz_sub_ui(tmpMax,q,1);
                     mpz_urandomm(k,state,tmpMax );
                     mpz_add_ui(k,k,2);             // k = randrange(2, q + 1),uguale a d ma con q+1 invece di q
 
+                    printf("tmpMax :\n");
+                    mpz_out_str(stdout,10,tmpMax);
+                    printf("\n\n");
+                    printf("k :\n");
+                    mpz_out_str(stdout,10,k);
+                    printf("\n\n");
+                    printf("q :\n");
+                    mpz_out_str(stdout,10,q);
+                    printf("\n\n");
+                    printf("\n\n");
+                    printf("\n\n");
+                    
+                    
+                    
                     mpz_init(xH); 
                     mpz_init(yH); 
                     conic_pow(xH,yH, xG, yG, k, d, q);
 
+                    printf("xh :\n");
+                    mpz_out_str(stdout,10,xH);
+                    printf("\n\n");
+                    printf("d :\n");
+                    mpz_out_str(stdout,10,d);
+                    printf("\n\n");
+                    printf("yh :\n");
+                    mpz_out_str(stdout,10,yH);
+                    printf("\n\n");
+                    printf("xg :\n");
+                    mpz_out_str(stdout,10,xG);
+                    printf("\n\n");
+                    printf("yg :\n");
+                    mpz_out_str(stdout,10,yG);
+                    printf("\n\n");
+
+                    printf("k :\n");
+                    mpz_out_str(stdout,10,k);
+                    printf("\n\n");
+
+                    printf("square :\n");
+                    mpz_out_str(stdout,10,square);
+                    printf("\n\n");
+                    
+                    
+                    
                     break;
                 }
             }
