@@ -64,6 +64,7 @@ CipherText enc(mpz_t msg, PublicKey pk ) {
     mpz_init(v);   
     mpz_t square;       
     mpz_init(square);  
+    
     while (mpz_cmp(v,stop) < 0) {
         // square = (1 + d * pow(y, 2, q)) % q
         mpz_mul(square, y, y);   
