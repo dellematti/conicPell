@@ -61,11 +61,10 @@ CipherText enc(mpz_t msg, PublicKey pk ) {
 
 
     mpz_t v;
-    mpz_init(v);   // init da in automatico 0 come valore, non serve settarlo
+    mpz_init(v);   
     mpz_t square;       
     mpz_init(square);  
     while (mpz_cmp(v,stop) < 0) {
-
         // square = (1 + d * pow(y, 2, q)) % q
         mpz_mul(square, y, y);   
         mpz_mod(square,square,q);  
@@ -77,7 +76,6 @@ CipherText enc(mpz_t msg, PublicKey pk ) {
             break;
         }
         mpz_add_ui(y,y,1);
-
         mpz_add_ui(v,v,1);
     }
 
