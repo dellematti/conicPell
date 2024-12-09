@@ -1,13 +1,6 @@
 
-// il messaggio che viene cifrato NON è una stringa ma un numero (uso un mpz anche qua come tipo)
-// posso aggiungere la parte dove da stringa ottengo un numero 
-
-
-
 // cifra il messaggio 'msg' utilizzando la chiave pubblica. 
 CipherText enc(mpz_t msg, PublicKey pk ) {
-    // come prima cosa devo ricavare gli mpz dai vari parametri nella public key
-    // potrei durante gen, mettere nella struct sia la stringa esadecimale, sia l mpz(?)
 
     mpz_t q;
     mpz_init(q);
@@ -37,12 +30,9 @@ CipherText enc(mpz_t msg, PublicKey pk ) {
     // int var = n/16;               // C fa in automatico la floor division 
     mp_bitcnt_t var = n/16;
 
-    // qua potrei fare un controllo sulla lunghezza massima del messaggio, TODO implementarlo 
-    //   if msg.bit_length() > n - 1 - var:
-    //     raise ValueError('msg longer than 15*n/16-1')
 
 
-    long seed = clock();           // anche qua come in gen, controllare che clock vada bene per il seed   
+    long seed = clock();            
     gmp_randstate_t state;
     gmp_randinit_default(state);   
     gmp_randseed_ui(state,seed);
@@ -79,10 +69,6 @@ CipherText enc(mpz_t msg, PublicKey pk ) {
         mpz_add_ui(y,y,1);
         mpz_add_ui(v,v,1);
     }
-
-    // finito il ciclo ci sarebbe questo controllo in più da implementare TODO  (anche se già solo con n 512 non serve)
-    // if j != 1:
-    //   raise ValueError('x not found because 1+dy non-square')
 
 
     mpz_t x;
