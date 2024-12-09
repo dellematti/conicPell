@@ -35,6 +35,7 @@ int main() {
     mpz_set_ui(msg, 123456);
     // mpz_set_ui(msg, 56);
 
+    // due istruzioni per provare msg più lunghi
     // char str[] = "66164242442642507528989023859824759472593789587329075298373982759823789572398752853285798327953828932";
     // mpz_set_str(msg, str, 10);
 
